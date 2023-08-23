@@ -1,4 +1,6 @@
 import { Car } from "./models/Car.js"
+import { House } from "./models/House.js"
+import { Job } from "./models/Jobs.js"
 import { Value } from "./models/Value.js"
 import { EventEmitter } from "./utils/EventEmitter.js"
 import { isValidProp } from "./utils/isValidProp.js"
@@ -12,6 +14,20 @@ class ObservableAppState extends EventEmitter {
 
 
   cars = loadState('cars', [Car])
+
+  houses = loadState('houses', [House])
+  jobs = [
+    new Job({ bounty: 100, job: 'raking', description: 'Something' }),
+    new Job({ bounty: 200, job: 'mowing', description: 'Something' }),
+    new Job({ bounty: 300, job: 'driving', description: 'Something' })
+  ]
+
+  // [
+  //   // new House({ year: '1974', bedrooms: 3, bathrooms: 2.5, sqft: 1400, price: 375000, description: 'something', imgUrl: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80' }),
+  //   // new House({ year: '1955', bedrooms: 3, bathrooms: 1.5, sqft: 1400, price: 375000, description: 'something', imgUrl: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80' }),
+  //   // new House({ year: '1990', bedrooms: 3, bathrooms: 2.5, sqft: 100, price: 375000, description: 'something', imgUrl: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80' }),
+  //   // new House({ year: '1980', bedrooms: 3, bathrooms: 2.5, sqft: 100, price: 35000, description: 'something', imgUrl: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80' })
+  // ]
 
   // cars = [
 
